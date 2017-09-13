@@ -5,17 +5,17 @@ var Definition = sequelize.import('../models/definition');
 
 router.post('/', function(req, res) {
 	//variables
-	    var description = req.body.definition.desc;
-        var logType= req.body.definition.type;
-        var owner = req.user.id;
+	    var runDate = req.body.definition.runDate; //
+        var miles = req.body.definition.miles; //
+        var minutes = req.body.definition.minutes;  //changed var names and to definition.minutes
 
 	//methods
 	Definition
 	//objects must match the model 
 	.create({ 
-	   	description: description,
-	   	logType: logType,
-	   	owner: owner
+	   	runDate: runDate,  // changed description
+	   	miles: miles,  // changed logType
+	   	minutes: minutes  // changed from owner
 	   })
 
 		.then(
@@ -52,6 +52,5 @@ router.get('/', function(req, res) {
 		}
 	);
 });
-
 
 module.exports = router;

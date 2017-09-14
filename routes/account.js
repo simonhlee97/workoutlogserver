@@ -40,7 +40,7 @@ router.get('/', function(req, res) {
 	Account
 	//findAll by owner method
 	.findAll({
-		where: { owner: userid }
+		where: { id: userid }
 	})
 	.then(
 		//success

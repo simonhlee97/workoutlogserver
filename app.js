@@ -5,9 +5,10 @@ var app = express();
 var http = require('http').Server(app);
 var bodyParser = require('body-parser');
 var sequelize = require('./db');
-
 var User = sequelize.import('./models/user');
+var Log = sequelize.import('./models/log');
 //Create table
+
 sequelize.sync(); // sync( {force: true}), to drop then create each time the app starts!
 
 app.use(bodyParser.json());

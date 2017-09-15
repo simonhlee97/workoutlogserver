@@ -6,19 +6,23 @@ var Definition = sequelize.import('../models/definition');
 
 router.post('/', function(req, res) {
     // req has some body properties that have a username and pwd
-    var description = req.body.log.description; 
-    var result = req.body.log.result; 
-    var user = req.user;
-    var definition = req.body.log.def;
+    var note = req.body.log.note;
+    var miles = req.body.log.miles;
+    var minutes = req.body.log.minutes;
+    // var result = req.body.log.result; 
+    // var user = req.user;
+    // var definition = req.body.log.def;
    
 
     // Use our sequelize model to create log
   	Log 
 	    .create({ 
-	    	description: description,
-	    	result: result,
-	    	owner: user.id,
-	    	def: definition
+	    	note: note,
+	    	miles: miles,
+	    	minutes: minutes
+	    	// result: result,
+	    	// owner: user.id,
+	    	// def: definition
 	    })
 	    .then(
 	    	function createSuccess(log) {
@@ -47,7 +51,7 @@ router.get('/', function(req, res) {
 	);
 });
 
-//This will retrieve one workout specified by the log id
+
 //This will retrieve one workout specified by the log id
 router.get('/:id', function(req, res) {
 	var data = req.params.id;

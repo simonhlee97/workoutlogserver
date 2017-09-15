@@ -8,7 +8,6 @@ let sequelize = new Sequelize('workoutlog', 'postgres', 'postByoungEun2014',{
 	dialect: 'postgres'
 });
 
-
 sequelize.authenticate().then(
 	function() {
 		console.log('connected to workoutlog postgres db');

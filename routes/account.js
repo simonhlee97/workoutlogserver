@@ -55,6 +55,5 @@ router.get('/', function(req, res) {
 	);
 });
 
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTA1MzMwNTE2LCJleHAiOjE1MDU0MTY5MTZ9.LiccpZ-rFqSioOx99QWqt_C1s3rV54Z7xWAdI_DiYpI
 
 module.exports = router;
